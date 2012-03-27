@@ -7,7 +7,6 @@
 //
 
 #import "Layouter.h"
-#import "Common.h"
 
 @interface AddCommand : NSObject
 @property (nonatomic, strong) UIView *view;
@@ -93,7 +92,6 @@
     CGRect rect = CGRectMake(0.0, 0.0, self.padding.width, self.padding.height);
     for( AddCommand *cmd in self.views ) rect = CGRectUnion(rect, cmd.view.frame);
     rect = CGRectMake(0.0, 0.0, rect.size.width + self.padding.width, rect.size.height + self.padding.height);
-//    Debug( @"Layouter.frame is (%f, %f) (%f x %f)", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height );
     return rect;
 }
 
